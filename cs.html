@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ </head>
+
+ <body>
+  asfsadfsadfsadfsadsafasffs
+ </body>
+ <SCRIPT>
+var oPopup = window.createPopup();
+var popTop=50;
+function popmsg(msgstr){
+	var winstr="";
+	winstr+="";
+	winstr+="<h2 style=\"color:#000;font-size:12px;line-height:20px;width:auto;height:229px;margin:0;padding:40px 10px 10px 10px;background:#f5f5f5;border:1px #000 solid;\">"+msgstr+"</h2>";
+	oPopup.document.body.innerHTML = winstr;
+	popshow();
+}
+function popshow(){
+	window.status=popTop;
+	if(popTop>1720){
+		clearTimeout(mytime);
+		oPopup.hide();
+		return;
+	}else if(popTop>1520&&popTop<1720){
+		oPopup.show(screen.width-250,screen.height,241,1720-popTop);
+	}else if(popTop>1500&&popTop<1520){
+		oPopup.show(screen.width-250,screen.height+(popTop-1720),241,172);
+	}else if(popTop<180){
+		oPopup.show(screen.width-250,screen.height,241,popTop);
+	}else if(popTop<220){
+		oPopup.show(screen.width-250,screen.height-popTop,241,172);
+	}
+	popTop+=10;
+	var mytime=setTimeout("popshow();",50);
+}
+popmsg("山西省省长12：20分抵达首都机场，请及时迎接");</SCRIPT>
+</html>
